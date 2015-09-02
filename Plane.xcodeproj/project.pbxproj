@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7DD809E81B9598E10035E396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD809E71B9598E10035E396 /* AppDelegate.swift */; };
+		7DD809EA1B9598E10035E396 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7DD809E91B9598E10035E396 /* GameScene.sks */; };
+		7DD809EC1B9598E10035E396 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD809EB1B9598E10035E396 /* GameScene.swift */; };
+		7DD809EE1B9598E10035E396 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD809ED1B9598E10035E396 /* GameViewController.swift */; };
+		7DD809F11B9598E10035E396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD809EF1B9598E10035E396 /* Main.storyboard */; };
+		7DD809F31B9598E10035E396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD809F21B9598E10035E396 /* Assets.xcassets */; };
+		7DD809F61B9598E10035E396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD809F41B9598E10035E396 /* LaunchScreen.storyboard */; };
+		7DD80A011B9598E20035E396 /* PlaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD80A001B9598E20035E396 /* PlaneTests.swift */; };
+		7DD80A0C1B9598E20035E396 /* PlaneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD80A0B1B9598E20035E396 /* PlaneUITests.swift */; };
+		7DD80A1C1B959B510035E396 /* HeroPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD80A1B1B959B510035E396 /* HeroPlane.swift */; settings = {ASSET_TAGS = (); }; };
+		7DD80A251B95A0620035E396 /* bullet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7DD80A1E1B95A0620035E396 /* bullet.mp3 */; settings = {ASSET_TAGS = (); }; };
+		7DD80A261B95A0620035E396 /* enemy1_down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7DD80A1F1B95A0620035E396 /* enemy1_down.mp3 */; settings = {ASSET_TAGS = (); }; };
+		7DD80A271B95A0620035E396 /* enemy2_down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7DD80A201B95A0620035E396 /* enemy2_down.mp3 */; settings = {ASSET_TAGS = (); }; };
+		7DD80A281B95A0620035E396 /* enemy2_out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7DD80A211B95A0620035E396 /* enemy2_out.mp3 */; settings = {ASSET_TAGS = (); }; };
+		7DD80A291B95A0620035E396 /* enemy3_down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7DD80A221B95A0620035E396 /* enemy3_down.mp3 */; settings = {ASSET_TAGS = (); }; };
+		7DD80A2A1B95A0620035E396 /* game_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7DD80A231B95A0620035E396 /* game_music.mp3 */; settings = {ASSET_TAGS = (); }; };
+		7DD80A2B1B95A0620035E396 /* game_over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7DD80A241B95A0620035E396 /* game_over.mp3 */; settings = {ASSET_TAGS = (); }; };
+		7DD80A2D1B95AC0B0035E396 /* EnemyPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD80A2C1B95AC0B0035E396 /* EnemyPlane.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7DD809FD1B9598E20035E396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7DD809DC1B9598E10035E396 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DD809E31B9598E10035E396;
+			remoteInfo = Plane;
+		};
+		7DD80A081B9598E20035E396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7DD809DC1B9598E10035E396 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DD809E31B9598E10035E396;
+			remoteInfo = Plane;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7DD809E41B9598E10035E396 /* Plane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plane.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD809E71B9598E10035E396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7DD809E91B9598E10035E396 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		7DD809EB1B9598E10035E396 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		7DD809ED1B9598E10035E396 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7DD809F01B9598E10035E396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7DD809F21B9598E10035E396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DD809F51B9598E10035E396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7DD809F71B9598E10035E396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DD809FC1B9598E20035E396 /* PlaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD80A001B9598E20035E396 /* PlaneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneTests.swift; sourceTree = "<group>"; };
+		7DD80A021B9598E20035E396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DD80A071B9598E20035E396 /* PlaneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD80A0B1B9598E20035E396 /* PlaneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneUITests.swift; sourceTree = "<group>"; };
+		7DD80A0D1B9598E20035E396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DD80A1B1B959B510035E396 /* HeroPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroPlane.swift; sourceTree = "<group>"; };
+		7DD80A1E1B95A0620035E396 /* bullet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bullet.mp3; sourceTree = "<group>"; };
+		7DD80A1F1B95A0620035E396 /* enemy1_down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemy1_down.mp3; sourceTree = "<group>"; };
+		7DD80A201B95A0620035E396 /* enemy2_down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemy2_down.mp3; sourceTree = "<group>"; };
+		7DD80A211B95A0620035E396 /* enemy2_out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemy2_out.mp3; sourceTree = "<group>"; };
+		7DD80A221B95A0620035E396 /* enemy3_down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemy3_down.mp3; sourceTree = "<group>"; };
+		7DD80A231B95A0620035E396 /* game_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_music.mp3; sourceTree = "<group>"; };
+		7DD80A241B95A0620035E396 /* game_over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_over.mp3; sourceTree = "<group>"; };
+		7DD80A2C1B95AC0B0035E396 /* EnemyPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyPlane.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DD809E11B9598E10035E396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD809F91B9598E20035E396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD80A041B9598E20035E396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7DD809DB1B9598E10035E396 = {
+			isa = PBXGroup;
+			children = (
+				7DD809E61B9598E10035E396 /* Plane */,
+				7DD809FF1B9598E20035E396 /* PlaneTests */,
+				7DD80A0A1B9598E20035E396 /* PlaneUITests */,
+				7DD809E51B9598E10035E396 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7DD809E51B9598E10035E396 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DD809E41B9598E10035E396 /* Plane.app */,
+				7DD809FC1B9598E20035E396 /* PlaneTests.xctest */,
+				7DD80A071B9598E20035E396 /* PlaneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DD809E61B9598E10035E396 /* Plane */ = {
+			isa = PBXGroup;
+			children = (
+				7DD80A1D1B95A0620035E396 /* sounds */,
+				7DD809E71B9598E10035E396 /* AppDelegate.swift */,
+				7DD809E91B9598E10035E396 /* GameScene.sks */,
+				7DD809EB1B9598E10035E396 /* GameScene.swift */,
+				7DD80A2C1B95AC0B0035E396 /* EnemyPlane.swift */,
+				7DD80A1B1B959B510035E396 /* HeroPlane.swift */,
+				7DD809ED1B9598E10035E396 /* GameViewController.swift */,
+				7DD809EF1B9598E10035E396 /* Main.storyboard */,
+				7DD809F21B9598E10035E396 /* Assets.xcassets */,
+				7DD809F41B9598E10035E396 /* LaunchScreen.storyboard */,
+				7DD809F71B9598E10035E396 /* Info.plist */,
+			);
+			path = Plane;
+			sourceTree = "<group>";
+		};
+		7DD809FF1B9598E20035E396 /* PlaneTests */ = {
+			isa = PBXGroup;
+			children = (
+				7DD80A001B9598E20035E396 /* PlaneTests.swift */,
+				7DD80A021B9598E20035E396 /* Info.plist */,
+			);
+			path = PlaneTests;
+			sourceTree = "<group>";
+		};
+		7DD80A0A1B9598E20035E396 /* PlaneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7DD80A0B1B9598E20035E396 /* PlaneUITests.swift */,
+				7DD80A0D1B9598E20035E396 /* Info.plist */,
+			);
+			path = PlaneUITests;
+			sourceTree = "<group>";
+		};
+		7DD80A1D1B95A0620035E396 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7DD80A1E1B95A0620035E396 /* bullet.mp3 */,
+				7DD80A1F1B95A0620035E396 /* enemy1_down.mp3 */,
+				7DD80A201B95A0620035E396 /* enemy2_down.mp3 */,
+				7DD80A211B95A0620035E396 /* enemy2_out.mp3 */,
+				7DD80A221B95A0620035E396 /* enemy3_down.mp3 */,
+				7DD80A231B95A0620035E396 /* game_music.mp3 */,
+				7DD80A241B95A0620035E396 /* game_over.mp3 */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DD809E31B9598E10035E396 /* Plane */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DD80A101B9598E20035E396 /* Build configuration list for PBXNativeTarget "Plane" */;
+			buildPhases = (
+				7DD809E01B9598E10035E396 /* Sources */,
+				7DD809E11B9598E10035E396 /* Frameworks */,
+				7DD809E21B9598E10035E396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Plane;
+			productName = Plane;
+			productReference = 7DD809E41B9598E10035E396 /* Plane.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7DD809FB1B9598E20035E396 /* PlaneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DD80A131B9598E20035E396 /* Build configuration list for PBXNativeTarget "PlaneTests" */;
+			buildPhases = (
+				7DD809F81B9598E20035E396 /* Sources */,
+				7DD809F91B9598E20035E396 /* Frameworks */,
+				7DD809FA1B9598E20035E396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DD809FE1B9598E20035E396 /* PBXTargetDependency */,
+			);
+			name = PlaneTests;
+			productName = PlaneTests;
+			productReference = 7DD809FC1B9598E20035E396 /* PlaneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7DD80A061B9598E20035E396 /* PlaneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DD80A161B9598E20035E396 /* Build configuration list for PBXNativeTarget "PlaneUITests" */;
+			buildPhases = (
+				7DD80A031B9598E20035E396 /* Sources */,
+				7DD80A041B9598E20035E396 /* Frameworks */,
+				7DD80A051B9598E20035E396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DD80A091B9598E20035E396 /* PBXTargetDependency */,
+			);
+			name = PlaneUITests;
+			productName = PlaneUITests;
+			productReference = 7DD80A071B9598E20035E396 /* PlaneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DD809DC1B9598E10035E396 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = eko;
+				TargetAttributes = {
+					7DD809E31B9598E10035E396 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					7DD809FB1B9598E20035E396 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7DD809E31B9598E10035E396;
+					};
+					7DD80A061B9598E20035E396 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7DD809E31B9598E10035E396;
+					};
+				};
+			};
+			buildConfigurationList = 7DD809DF1B9598E10035E396 /* Build configuration list for PBXProject "Plane" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DD809DB1B9598E10035E396;
+			productRefGroup = 7DD809E51B9598E10035E396 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DD809E31B9598E10035E396 /* Plane */,
+				7DD809FB1B9598E20035E396 /* PlaneTests */,
+				7DD80A061B9598E20035E396 /* PlaneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DD809E21B9598E10035E396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD809EA1B9598E10035E396 /* GameScene.sks in Resources */,
+				7DD80A261B95A0620035E396 /* enemy1_down.mp3 in Resources */,
+				7DD80A2A1B95A0620035E396 /* game_music.mp3 in Resources */,
+				7DD80A291B95A0620035E396 /* enemy3_down.mp3 in Resources */,
+				7DD809F61B9598E10035E396 /* LaunchScreen.storyboard in Resources */,
+				7DD80A281B95A0620035E396 /* enemy2_out.mp3 in Resources */,
+				7DD80A2B1B95A0620035E396 /* game_over.mp3 in Resources */,
+				7DD80A251B95A0620035E396 /* bullet.mp3 in Resources */,
+				7DD809F31B9598E10035E396 /* Assets.xcassets in Resources */,
+				7DD809F11B9598E10035E396 /* Main.storyboard in Resources */,
+				7DD80A271B95A0620035E396 /* enemy2_down.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD809FA1B9598E20035E396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD80A051B9598E20035E396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DD809E01B9598E10035E396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD80A2D1B95AC0B0035E396 /* EnemyPlane.swift in Sources */,
+				7DD80A1C1B959B510035E396 /* HeroPlane.swift in Sources */,
+				7DD809EC1B9598E10035E396 /* GameScene.swift in Sources */,
+				7DD809EE1B9598E10035E396 /* GameViewController.swift in Sources */,
+				7DD809E81B9598E10035E396 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD809F81B9598E20035E396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD80A011B9598E20035E396 /* PlaneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD80A031B9598E20035E396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD80A0C1B9598E20035E396 /* PlaneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7DD809FE1B9598E20035E396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DD809E31B9598E10035E396 /* Plane */;
+			targetProxy = 7DD809FD1B9598E20035E396 /* PBXContainerItemProxy */;
+		};
+		7DD80A091B9598E20035E396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DD809E31B9598E10035E396 /* Plane */;
+			targetProxy = 7DD80A081B9598E20035E396 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7DD809EF1B9598E10035E396 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DD809F01B9598E10035E396 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7DD809F41B9598E10035E396 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DD809F51B9598E10035E396 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7DD80A0E1B9598E20035E396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7DD80A0F1B9598E20035E396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7DD80A111B9598E20035E396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Plane/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eko.hcxy.me.Plane;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7DD80A121B9598E20035E396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Plane/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eko.hcxy.me.Plane;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7DD80A141B9598E20035E396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = PlaneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eko.hcxy.me.PlaneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Plane.app/Plane";
+			};
+			name = Debug;
+		};
+		7DD80A151B9598E20035E396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlaneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eko.hcxy.me.PlaneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Plane.app/Plane";
+			};
+			name = Release;
+		};
+		7DD80A171B9598E20035E396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = PlaneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eko.hcxy.me.PlaneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Plane;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7DD80A181B9598E20035E396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PlaneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eko.hcxy.me.PlaneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Plane;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DD809DF1B9598E10035E396 /* Build configuration list for PBXProject "Plane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD80A0E1B9598E20035E396 /* Debug */,
+				7DD80A0F1B9598E20035E396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DD80A101B9598E20035E396 /* Build configuration list for PBXNativeTarget "Plane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD80A111B9598E20035E396 /* Debug */,
+				7DD80A121B9598E20035E396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7DD80A131B9598E20035E396 /* Build configuration list for PBXNativeTarget "PlaneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD80A141B9598E20035E396 /* Debug */,
+				7DD80A151B9598E20035E396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7DD80A161B9598E20035E396 /* Build configuration list for PBXNativeTarget "PlaneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD80A171B9598E20035E396 /* Debug */,
+				7DD80A181B9598E20035E396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DD809DC1B9598E10035E396 /* Project object */;
+}
