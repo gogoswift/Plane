@@ -7,11 +7,34 @@ enum EnemyPlaneType:Int{
 }
 
 class EnemyPlane:SKSpriteNode {
-    
+    var label : SKLabelNode?
     var hp:Int = 5
     var type:EnemyPlaneType = .Small
-    var enemyName:String = ""
+    var tName:String = ""
+    var enemyName:String {
+        get{
+            return tName
+        }
+        set(newValue){
+            label?.text = newValue
+            self.tName = newValue
+        }
+    }
     
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        
+        label = SKLabelNode(fontNamed:"MarkerFelt-Thin")
+        label!.text = enemyName
+        label!.zPosition = 2
+        label!.fontColor = SKColor.blackColor()
+        label!.position = CGPointMake(0.0, -self.size.height)
+        self.addChild(label!)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     class func createSmallPlane()->EnemyPlane{
         let planeTexture = SKTexture(imageNamed:"enemy1_fly_1")
         let plane = EnemyPlane(texture:planeTexture)
@@ -22,6 +45,8 @@ class EnemyPlane:SKSpriteNode {
         
         plane.physicsBody = SKPhysicsBody(texture:planeTexture,size:plane.size)
         //plane.physicsBody = SKPhysicsBody(rectangleOfSize: plane.size)
+        
+
         return plane
     }
     
