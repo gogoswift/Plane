@@ -23,14 +23,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
     }
     //初始化设置
     func onTestInit(){
-        //老镇做了一个打飞机的游戏，然后开辟了一个学习区给大家体会一下我们刚才学的
-        //我们可以看到，在游戏中玩家控制的飞机底下有个名字。那么我们用刚才所学的来创建一个字符串的变量改变一下名字。
-        let newName:String = "擎天一柱"
-        heroName = newName
-        //我们可以看到飞机的生命值是50，那我们作下弊，改成100，这事我们以前玩游戏没少干啊
-        let newLife :Int = 100
-        life = newLife
-        //ok，干完这事之后，大家可以通过修改源文件体会一下，打打飞机，然后进行下一步的学习
+
         
     }
     override func didMoveToView(view: SKView) {
