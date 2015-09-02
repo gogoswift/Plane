@@ -5,7 +5,7 @@
 一起学Swift2群：109816704
 
 Swift学习路线图：http://www.hcxy.me/wwdc/html/xuexiliuchengtu/index.html
-
+源代码下载地址：https://github.com/gogoswift/Plane
 */
 
 import SpriteKit
@@ -23,7 +23,14 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
     }
     //初始化设置
     func onTestInit(){
-        
+        //老镇做了一个打飞机的游戏，然后开辟了一个学习区给大家体会一下我们刚才学的
+        //我们可以看到，在游戏中玩家控制的飞机底下有个名字。那么我们用刚才所学的来创建一个字符串的变量改变一下名字。
+        let newName:String = "擎天一柱"
+        heroName = newName
+        //我们可以看到飞机的生命值是50，那我们作下弊，改成100，这事我们以前玩游戏没少干啊
+        let newLife :Int = 100
+        life = newLife
+        //ok，干完这事之后，大家可以通过修改源文件体会一下，打打飞机，然后进行下一步的学习
         
     }
     override func didMoveToView(view: SKView) {
@@ -136,20 +143,16 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
     func createEnemyPlane(){
         
         let choose = arc4random() % 100
-        var type:EnemyPlaneType
         var speed:Float
         var enemyPlane:EnemyPlane
         switch choose{
         case 0..<75:
-            type = .Small
             speed = Float(arc4random() % 3) + 2
             enemyPlane = EnemyPlane.createSmallPlane()
         case 75..<97:
-            type = .Medium
             speed = Float(arc4random() % 3) + 4
             enemyPlane = EnemyPlane.createMediumPlane()
-        case _:
-            type = .Large
+        default:
             speed = Float(arc4random() % 3) + 6
             enemyPlane = EnemyPlane.createLargePlane()
             if isSound{
@@ -317,7 +320,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         scoreLabel.zPosition = 2
         scoreLabel.fontColor = SKColor.blackColor()
         scoreLabel.horizontalAlignmentMode = .Left
-        scoreLabel.position = CGPointMake(330,CGFloat(self.size.height - 52))
+        scoreLabel.position = CGPointMake(310,CGFloat(self.size.height - 52))
         addChild(scoreLabel)
     }
     
@@ -332,9 +335,9 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         case .Small:
             score = 1000
         }
-        
+        labScore = labScore + score
         scoreLabel.runAction(SKAction.runBlock({() in
-            self.scoreLabel.text = "得分：\(self.labScore + score)      生命：\(self.life)"}))
+            self.scoreLabel.text = "得分：\(self.labScore)      生命：\(self.life)"}))
         
     }
     
