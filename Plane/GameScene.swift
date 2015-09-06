@@ -79,10 +79,12 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         hero.zPosition = 1
         hero.onSetName(heroName)
         
-        hero.physicsBody = SKPhysicsBody(texture:SKTexture(imageNamed: "hero_fly_1"),size:hero.size)
+        let heroTexture = SKTexture(imageNamed: "hero_fly_1")
+        hero.physicsBody = SKPhysicsBody(rectangleOfSize:heroTexture.size())
         hero.physicsBody?.allowsRotation = false
         hero.physicsBody?.categoryBitMask = RoleCategory.HeroPlane.rawValue
         hero.physicsBody?.collisionBitMask = 0
+//        hero.physicsBody?.dynamic = false
         hero.physicsBody?.contactTestBitMask = RoleCategory.EnemyPlane.rawValue
         self.addChild(hero)
         
@@ -109,7 +111,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         let bulletRemove = SKAction.removeFromParent()
         bullet.runAction(SKAction.sequence([bulletMove,bulletRemove]))
         
-        bullet.physicsBody = SKPhysicsBody(rectangleOfSize: bullet.size)
+        bullet.physicsBody = SKPhysicsBody(rectangleOfSize: bulletTexture.size())
+        bullet.physicsBody?.dynamic = true
         bullet.physicsBody?.allowsRotation = false
         bullet.physicsBody?.categoryBitMask = RoleCategory.Bullet.rawValue
         bullet.physicsBody?.collisionBitMask = RoleCategory.EnemyPlane.rawValue
@@ -160,8 +163,19 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         enemyPlane.physicsBody?.categoryBitMask = RoleCategory.EnemyPlane.rawValue
         enemyPlane.physicsBody?.collisionBitMask = RoleCategory.Bullet.rawValue | RoleCategory.HeroPlane.rawValue
         enemyPlane.physicsBody?.contactTestBitMask = RoleCategory.Bullet.rawValue | RoleCategory.HeroPlane.rawValue
-        let x = CGFloat(rand()) % CGFloat(self.size.width-400) + 200
         
+        
+        var x = CGFloat(rand()) % CGFloat(self.size.width*3/4) + self.size.width/4
+
+        
+        if x <= self.size.width/4 + enemyPlane.size.width*2 {
+            x = self.size.width/4 + enemyPlane.size.width*2
+            
+        }else if x >= (self.size.width*3/4 - enemyPlane.size.width*2){
+            x = self.size.width*3/4  - enemyPlane.size.width*2
+        }
+        
+//        enemyPlane.enemyName = "\(enemyPlane.hp)"
         enemyPlane.position = CGPointMake(x, self.size.height)
         
         let moveAction = SKAction.moveToY(0, duration: NSTimeInterval(speed))
@@ -206,32 +220,45 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        let enemyPlane = contact.bodyA.categoryBitMask & RoleCategory.EnemyPlane.rawValue == RoleCategory.EnemyPlane.rawValue ? contact.bodyA.node as! EnemyPlane : contact.bodyB.node as! EnemyPlane
-        
+
+        var enemyPlane : EnemyPlane?
+        var bullet : SKSpriteNode?
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        if collision == RoleCategory.EnemyPlane.rawValue | RoleCategory.Bullet.rawValue{
+        if collision == RoleCategory.EnemyPlane.rawValue | RoleCategory.Bullet.rawValue {
+            if contact.bodyA.categoryBitMask == RoleCategory.Bullet.rawValue{
+                enemyPlane = contact.bodyB.node as? EnemyPlane
+                bullet = contact.bodyA.node as? SKSpriteNode
+            }else if contact.bodyB.categoryBitMask == RoleCategory.Bullet.rawValue {
+                enemyPlane = contact.bodyA.node as? EnemyPlane
+                bullet = contact.bodyB.node as? SKSpriteNode
+            }
+//            let bullet = contact.bodyA.node as! SKSpriteNode
+            bullet!.physicsBody?.dynamic = false
+            bullet!.removeAllActions()
+            bullet!.runAction(SKAction.removeFromParent())
             
-            // hit bullet
-            let bullet = contact.bodyA.categoryBitMask & RoleCategory.Bullet.rawValue == RoleCategory.Bullet.rawValue ? contact.bodyA.node as! SKSpriteNode : contact.bodyB.node as! SKSpriteNode
-            
-            bullet.runAction(SKAction.removeFromParent())
-            
-            enemyPlaneCollision(enemyPlane)
+            enemyPlaneCollision(enemyPlane!)
+//            enemyPlane!.enemyName = "\(enemyPlane!.hp)"
             
             
             
         } else if collision == RoleCategory.EnemyPlane.rawValue | RoleCategory.HeroPlane.rawValue{
-//            print("hit plane")
-            
-            
+//
+        
             life--
             if life <= 0 {
                 life = 0
                 self.scoreLabel.text = "得分：\(self.labScore)      生命：\(self.life)"
                 // hit hero plane
-                let heroPlane = contact.bodyA.categoryBitMask & RoleCategory.HeroPlane.rawValue == RoleCategory.HeroPlane.rawValue ? contact.bodyA.node as! SKSpriteNode : contact.bodyB.node as! SKSpriteNode
+
+                var heroPlane:HeroPlane?
+                if contact.bodyA.categoryBitMask == RoleCategory.HeroPlane.rawValue {
+                    heroPlane = contact.bodyA.node as? HeroPlane
+                }else{
+                    heroPlane = contact.bodyB.node as? HeroPlane
+                }
                 
-                heroPlane.runAction(heroPlaneBlowUpAction,completion:{() in
+                heroPlane!.runAction(heroPlaneBlowUpAction,completion:{() in
                     self.runAction(SKAction.sequence([
                         SKAction.playSoundFileNamed("game_over.mp3", waitForCompletion: true),
                         SKAction.runBlock({() in
@@ -259,7 +286,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
     func enemyPlaneCollision(enemyPlane:EnemyPlane)
     {
         enemyPlane.hp -= hero.att
-//        print("\(enemyPlane.enemyName):\(enemyPlane.hp)")
         
         if enemyPlane.hp < 0 {
             enemyPlane.hp = 0
@@ -310,10 +336,11 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         scoreLabel = SKLabelNode(fontNamed:"MarkerFelt-Thin")
         
         scoreLabel.text = "得分：\(labScore)      生命：\(life)"
+        scoreLabel.fontSize = 20
         scoreLabel.zPosition = 2
         scoreLabel.fontColor = SKColor.blackColor()
         scoreLabel.horizontalAlignmentMode = .Left
-        scoreLabel.position = CGPointMake(310,CGFloat(self.size.height - 52))
+        scoreLabel.position = CGPointMake(310,CGFloat(self.size.height - 30))
         addChild(scoreLabel)
     }
     
